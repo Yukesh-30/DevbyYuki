@@ -3,7 +3,7 @@ import Lenis from '@studio-freight/lenis';
 import CustomCursor from './components/ui/CustomCursor';
 import Sidebar from './components/layout/Sidebar';
 import MobileNav from './components/layout/MobileNav';
-import Hero from './components/sections/Hero';
+import Hero from './components/sections/CanvasHero';
 import WorkSlider from './components/sections/WorkSlider';
 import AgencyStory from './components/sections/AgencyStory';
 import ProductionTiers from './components/sections/ProductionTiers';
@@ -66,7 +66,7 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden bg-brand-cream pr-0 lg:pr-64">
+    <main className="min-h-screen relative bg-brand-cream pr-0 lg:pr-64">
       <CustomCursor />
       
       {/* Desktop Sidebar - Hidden on Mobile */}

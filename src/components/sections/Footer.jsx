@@ -62,14 +62,6 @@ const Footer = () => {
                 </div>
             ),
         },
-        {
-            name: 'TikTok',
-            icon: (
-                <div className="w-6 h-6 bg-brand-dark rounded-sm flex items-center justify-center">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-                </div>
-            ),
-        },
     ];
 
     return (
@@ -89,7 +81,7 @@ const Footer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-[clamp(2.5rem,5.5vw,5.5rem)] font-display font-black leading-[0.9] mb-14 tracking-[-0.04em] text-brand-dark normal-case"
+                            className="text-[clamp(2.5rem,5.5vw,5.5rem)] font-oswald font-black leading-[0.9] mb-14 tracking-[-0.04em] text-brand-dark normal-case"
                         >
                             Let's build<br />something worth<br />stopping for.
                         </motion.h2>
@@ -102,7 +94,7 @@ const Footer = () => {
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                     </svg>
                                 ),
-                                text: '(551) 215-0978',
+                                text: '7550251977',
                             },
                             {
                                 icon: (
@@ -110,7 +102,7 @@ const Footer = () => {
                                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                                     </svg>
                                 ),
-                                text: 'hello@feedagency.co',
+                                text: 'yukeshdhamu20@gmail.com',
                             },
                             {
                                 icon: (
@@ -118,7 +110,7 @@ const Footer = () => {
                                         <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
                                     </svg>
                                 ),
-                                text: '92 S State St, Hackensack, NJ',
+                                text: 'No.6, Lokasurya Nagar, Sholavaram, Chennai-600067',
                             },
                         ].map((item, i) => (
                             <motion.div
@@ -132,7 +124,7 @@ const Footer = () => {
                                 <div className="w-14 h-14 bg-brand-dark flex-shrink-0 flex items-center justify-center">
                                     {item.icon}
                                 </div>
-                                <span className="font-display font-black text-lg tracking-tight">{item.text}</span>
+                                <span className="font-body font-black font-normal text-lg tracking-tight">{item.text}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -153,7 +145,7 @@ const Footer = () => {
                                 { label: 'Phone:', placeholder: 'Enter your phone number', type: 'tel', col: 1 },
                             ].map((field, i) => (
                                 <div key={i} className="flex flex-col gap-2">
-                                    <label className="font-display font-black text-lg tracking-tight normal-case">{field.label}</label>
+                                    <label className="font-oswald font-black text-lg tracking-tight normal-case">{field.label}</label>
                                     <input
                                         type={field.type}
                                         placeholder={field.placeholder}
@@ -163,7 +155,7 @@ const Footer = () => {
                             ))}
 
                             <div className="flex flex-col gap-2 md:col-span-2">
-                                <label className="font-display font-black text-lg tracking-tight normal-case">How did you hear about us?</label>
+                                <label className="font-oswald font-black text-lg tracking-tight normal-case">How did you hear about us?</label>
                                 <div className="relative">
                                     <select className="w-full bg-[#DDD3C0] px-5 py-4 outline-none appearance-none text-sm font-semibold text-brand-dark/60 focus:ring-2 focus:ring-brand-dark/20 transition-all cursor-pointer">
                                         <option value="">Select one...</option>
@@ -182,7 +174,7 @@ const Footer = () => {
                             </div>
 
                             <div className="flex flex-col gap-2 md:col-span-2">
-                                <label className="font-display font-black text-lg tracking-tight normal-case">Tell us about your project:</label>
+                                <label className="font-oswald font-black text-lg tracking-tight normal-case">Tell us about your project:</label>
                                 <textarea
                                     placeholder="What do we need to know about the project?"
                                     rows={5}
@@ -203,23 +195,14 @@ const Footer = () => {
                     </motion.div>
                 </div>
 
-                {/* ── SUBHEADING CTA ── */}
-                <motion.h3
-                    initial={{ opacity: 0, y: 28 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[clamp(1.5rem,4vw,3rem)] font-display font-black leading-[1.1] tracking-[-0.03em] max-w-3xl mb-0 normal-case"
-                >
-                    Fill out the form or reach out anytime – we'd love to hear what you're working on!
-                </motion.h3>
+            
 
             </div>
 
             {/* ── HEY ANIMATION + SOCIALS ── */}
             <div
                 ref={heyRef}
-                className="section-container mt-0 pt-12 pb-20 border-b border-brand-dark/15 overflow-visible"
+                className="section-container -mt-20 lg:-mt-20 mb-10 pt-12 pb-20 border-b border-brand-dark/15 overflow-visible"
             >
                 {/* ── Mobile: stack vertically | Desktop: side-by-side ── */}
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-0 lg:gap-12">
