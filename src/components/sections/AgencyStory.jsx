@@ -14,7 +14,7 @@ const AgencyStory = () => {
     ];
 
     return (
-        <section className="py-24 bg-brand-dark" id="about">
+        <section className="py-24 bg-brand-dark min-h-screen" id="about">
             <div className="section-container">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <div className="lg:w-1/2">
