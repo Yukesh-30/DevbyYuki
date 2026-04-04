@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
 import CustomCursor from './components/ui/CustomCursor';
 import Sidebar from './components/layout/Sidebar';
+import MobileNav from './components/layout/MobileNav';
 import Hero from './components/sections/Hero';
 import WorkSlider from './components/sections/WorkSlider';
 import AgencyStory from './components/sections/AgencyStory';
@@ -65,18 +66,27 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden bg-brand-cream pr-32 md:pr-48 lg:pr-64">
+    <main className="min-h-screen relative overflow-hidden bg-brand-cream pr-0 lg:pr-64">
       <CustomCursor />
+      
+      {/* Desktop Sidebar - Hidden on Mobile */}
+      <div className="hidden lg:block">
+        <Sidebar 
+          onNavigate={handleNavigate} 
+          activeSection={activeSection} 
+          isTransitioning={isTransitioning}
+        />
+      </div>
+
+      {/* Mobile Navigation - Visible on Mobile */}
+      <MobileNav 
+        onNavigate={handleNavigate} 
+        activeSection={activeSection} 
+      />
       
       <div className="w-full relative min-h-screen">
         {renderSection()}
       </div>
-
-      <Sidebar 
-        onNavigate={handleNavigate} 
-        activeSection={activeSection} 
-        isTransitioning={isTransitioning}
-      />
     </main>
   );
 }

@@ -24,7 +24,7 @@ const Sidebar = ({ onNavigate, activeSection, isTransitioning }) => {
                 duration: 0.8, 
                 ease: [0.76, 0, 0.24, 1] 
             }}
-            className="fixed right-0 top-0 h-screen w-32 md:w-48 lg:w-64 flex z-[100] overflow-hidden shadow-[-10px_0_30px_rgba(0,0,0,0.1)]"
+            className="fixed right-0 top-0 h-screen w-32 md:w-48 lg:w-64 hidden lg:flex z-[100] overflow-hidden shadow-[-10px_0_30px_rgba(0,0,0,0.1)]"
         >
             {navItems.map((item, index) => (
                 <motion.div
