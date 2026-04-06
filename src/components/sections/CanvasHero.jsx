@@ -40,6 +40,51 @@ const slides = [
   }
 ];
 
+const Typewriter = ({ texts, speed = 150, delayBetween = 2000 }) => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const text = texts[currentTextIndex];
+    let timer;
+
+    if (isDeleting) {
+      if (currentText === '') {
+        setIsDeleting(false);
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(text.substring(0, currentText.length - 1));
+        }, speed / 2);
+      }
+    } else {
+      if (currentText === text) {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, delayBetween);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(text.substring(0, currentText.length + 1));
+        }, speed);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentTextIndex, texts, speed, delayBetween]);
+
+  return (
+    <span className="inline-flex items-center">
+      {currentText}
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+        className="ml-1 w-[2px] h-[0.8em] bg-current"
+      />
+    </span>
+  );
+};
+
 const SlideItem = ({ slide, onComplete }) => {
   const [phase, setPhase] = useState(0);
 
@@ -111,28 +156,23 @@ const CanvasHero = () => {
 
       {/* Final Branding Text anchored gracefully at the bottom */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-        className="absolute bottom-10 md:bottom-20 left-6 md:left-12 flex flex-col pointer-events-auto z-50"
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
+        className="absolute top-[22vw] md:top-[18vw] left-6 md:left-12 pointer-events-none z-50 text-brand-orange flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8"
       >
-        <h2 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display leading-[0.85] tracking-[-0.04em] uppercase max-w-4xl text-brand-orange mix-blend-multiply">
-          production<br className="hidden md:block" /> partners
+        <h2 className="text-[12vw] md:text-[8vw] font-playfair font-light leading-none tracking-tight">
+          yukesh
         </h2>
-
-        <div className="mt-8 flex flex-col md:flex-row md:items-start md:gap-10">
-          <p className="text-lg md:text-2xl font-medium leading-relaxed max-w-xl opacity-80 text-brand-dark">
-            Full service creative agency that provides a one stop shop for all social media content needs.
-          </p>
-          <div className="mt-6 md:mt-0">
-            <button className="px-10 py-5 bg-brand-dark text-white font-bold rounded-full text-sm md:text-lg uppercase tracking-wider hover:bg-brand-orange transition-all duration-300 transform hover:-translate-y-1 w-fit shadow-xl">
-              Let's chat
-            </button>
-          </div>
+        
+        <div className="text-xl md:text-3xl font-betania font-light tracking-tight opacity-70 mb-2 md:mb-0">
+          <Typewriter 
+            texts={["Software Developer", "Photographer", "Designer"]} 
+            speed={100}
+            delayBetween={2500}
+          />
         </div>
-      </motion.div>
-
-    </section>
+      </motion.div>    </section>
   );
 };
 
