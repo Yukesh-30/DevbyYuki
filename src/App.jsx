@@ -46,17 +46,17 @@ function App() {
       if (lenisRef.current) {
         lenisRef.current.scrollTo(0, { immediate: true });
       }
-      
+
       // Wait for the "Retract" phase to complete
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 1000); 
+      }, 1000);
     }, 800);
   };
 
   const renderSection = () => {
     switch (activeSection) {
-      case 'hero': return <Hero />;
+      case 'hero': return <Hero onNavigate={handleNavigate} />;
       case 'work': return <WorkSlider />;
       case 'about': return <AgencyStory />;
       case 'services': return <ProductionTiers />;
@@ -68,22 +68,22 @@ function App() {
   return (
     <main className="min-h-screen relative bg-brand-cream pr-0 lg:pr-64">
       <CustomCursor />
-      
+
       {/* Desktop Sidebar - Hidden on Mobile */}
       <div className="hidden lg:block">
-        <Sidebar 
-          onNavigate={handleNavigate} 
-          activeSection={activeSection} 
+        <Sidebar
+          onNavigate={handleNavigate}
+          activeSection={activeSection}
           isTransitioning={isTransitioning}
         />
       </div>
 
       {/* Mobile Navigation - Visible on Mobile */}
-      <MobileNav 
-        onNavigate={handleNavigate} 
-        activeSection={activeSection} 
+      <MobileNav
+        onNavigate={handleNavigate}
+        activeSection={activeSection}
       />
-      
+
       <div className="w-full relative min-h-screen">
         {renderSection()}
       </div>

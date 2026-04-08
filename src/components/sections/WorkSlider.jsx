@@ -36,16 +36,16 @@ const WorkSlider = () => {
             <div className="section-container mb-24">
                 <h2 className="text-5xl md:text-8xl font-black mb-8 tracking-[-0.05em] font-display">Selected<br />Projects</h2>
             </div>
-            
+
             <div ref={sliderRef} className="flex gap-12 px-24 h-[60vh] flex-nowrap">
                 {projects.map((project) => (
-                    <div 
-                        key={project.id} 
+                    <div
+                        key={project.id}
                         className="flex-shrink-0 w-[400px] md:w-[600px] h-full relative group cursor-pointer overflow-hidden rounded-2xl"
                     >
-                        <img 
-                            src={project.image} 
-                            alt={project.title} 
+                        <img
+                            src={project.image}
+                            alt={project.title}
                             className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                         />
                         <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

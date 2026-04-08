@@ -19,7 +19,7 @@
   --font-body: "Poppins", sans-serif;
   --font-oswald: "Oswald", sans-serif;
   --font-betania: "Betania Patmos In GDL", sans-serif;
-  --font-playfair: "Playfair Display", serif; 
+  --font-playfair: "Playfair Display", serif;
 }
 
 
@@ -33,10 +33,16 @@
   body {
     @apply bg-brand-cream text-brand-dark font-body;
     overflow-x: hidden;
-    cursor: none; /* Hide default cursor for custom one */
+    cursor: none;
+    /* Hide default cursor for custom one */
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight;
   }
 }
