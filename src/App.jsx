@@ -59,7 +59,7 @@ function App() {
       case 'hero': return <Hero onNavigate={handleNavigate} />;
       case 'work': return <WorkSlider />;
       case 'about': return <AgencyStory />;
-      case 'services': return <ProductionTiers />;
+      case 'skills': return <ProductionTiers />;
       case 'contact': return <Footer />;
       default: return <Hero />;
     }

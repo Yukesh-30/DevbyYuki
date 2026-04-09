@@ -1,48 +1,46 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import img1 from '../../assets/img1.jpg';
+import img2 from '../../assets/img2.jpg';
+import img3 from '../../assets/img3.jpg';
+import img4 from '../../assets/img4.jpg';
 
 const CARDS = [
   {
     id: 1,
-    client: "Sugar Bliss",
+    client: "Project One",
     rating: 5,
-    quote: "The brand identity captured the essence of our candies perfectly. It's sweet, vibrant, and exactly what we needed.",
-    bgColor: "#E6A5C1", // Soft Pink
+    quote: "Do and die",
+    bgColor: "#E6A5C1", 
     textColor: "#2D1B22",
-    images: [
-      "https://images.unsplash.com/photo-1581798459219-318e76aecc7b?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?auto=format&fit=crop&q=80&w=400"
-    ]
+    images: [img1, img1, img1, img1]
   },
   {
     id: 2,
-    client: "Candy Craft",
+    client: "Project Two",
     rating: 5,
-    quote: "Professionalism meets creativity. Our sales doubled after the new website launch. Truly a sweet experience!",
-    bgColor: "#7FB5B5", // Muted Teal
+    quote: "The way to build billion-dollar companies is to first build something people love",
+    bgColor: "#7FB5B5", 
     textColor: "#1A2E2E",
-    images: [
-      "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1575224300306-1b8da5bb0e62?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1470468969717-61d5d54fd036?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1582211594533-268f4f1ed07a?auto=format&fit=crop&q=80&w=400"
-    ]
+    images: [img2, img2, img2, img2]
   },
   {
     id: 3,
-    client: "Sweet Treats Co.",
+    client: "Project Three",
     rating: 5,
-    quote: "They understood our vision from day one. The visuals are so crisp you can almost taste the sugar.",
-    bgColor: "#D4A373", // Caramel/Orange
+    quote: "If the eagles don't fly for four days, it doesn't mean the sky belongs to the pigeons.",
+    bgColor: "#D4A373", 
     textColor: "#3A2A1A",
-    images: [
-      "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1548685913-fe6678babe8d?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1499195333224-3ce974eecfb4?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&q=80&w=400"
-    ]
+    images: [img3, img3, img3, img3]
+  },
+  {
+    id: 4,
+    client: "Project Four",
+    rating: 5,
+    quote: "If you define the problem correctly, you almost have the solution.",
+    bgColor: "#CEC2B1", 
+    textColor: "#2D261F",
+    images: [img4, img4, img4, img4]
   }
 ];
 
@@ -93,7 +91,7 @@ const SweetCandies = () => {
         </motion.div>
 
         {/* Card Stack Container */}
-        <div className="relative w-full max-w-4xl h-[380px] md:h-[480px] flex items-center justify-center">
+        <div className="relative w-full max-w-4xl h-[450px] md:h-[480px] flex items-center justify-center">
           <AnimatePresence mode="popLayout">
             {cards.map((card, index) => {
               const isTop = index === 0;
@@ -129,35 +127,20 @@ const SweetCandies = () => {
                     backgroundColor: card.bgColor,
                     color: card.textColor,
                   }}
-                  className={`absolute w-full h-[330px] md:h-[430px] p-6 md:p-10 flex flex-col md:flex-row gap-8 shadow-2xl pointer-events-auto cursor-default overflow-hidden`}
+                  className={`absolute w-full h-[400px] md:h-[430px] p-6 md:p-10 flex flex-col md:flex-row gap-4 md:gap-8 shadow-2xl pointer-events-auto cursor-default overflow-hidden rounded-3xl`}
                 >
                   {/* Left Side: Text */}
-                  <div className="flex-1 flex flex-col justify-between">
+                  <div className="flex-1 flex flex-col justify-center">
                     <div>
-                      <p className="text-xl md:text-2xl font-betania mb-2">{card.client}</p>
-                      <div className="flex gap-1 mb-8">
-                        {[...Array(card.rating)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
                       <h4 className="text-2xl md:text-3xl font-playfair leading-tight">
                         "{card.quote}"
                       </h4>
                     </div>
                   </div>
 
-                  {/* Right Side: Image Grid */}
-                  <div className="flex-1 grid grid-cols-2 gap-4 h-full">
-                    <div className="space-y-4">
-                       <img src={card.images[0]} alt="Work 1" className="w-full h-[60%] object-cover rounded-2xl shadow-lg" />
-                       <img src={card.images[1]} alt="Work 2" className="w-full h-[35%] object-cover rounded-2xl shadow-lg" />
-                    </div>
-                    <div className="space-y-4 pt-8">
-                       <img src={card.images[2]} alt="Work 3" className="w-full h-[35%] object-cover rounded-2xl shadow-lg" />
-                       <img src={card.images[3]} alt="Work 4" className="w-full h-[60%] object-cover rounded-2xl shadow-lg" />
-                    </div>
+                  {/* Right Side: Image */}
+                  <div className="flex-1 h-32 md:h-full w-full min-h-0">
+                    <img src={card.images[0]} alt="Work" className="w-full h-full object-cover shadow-lg " />
                   </div>
                 </motion.div>
               );
@@ -166,7 +149,7 @@ const SweetCandies = () => {
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex gap-4 -mt-48 md:mt-20">
+        <div className="flex gap-4 mt-8 md:mt-20 relative z-20">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

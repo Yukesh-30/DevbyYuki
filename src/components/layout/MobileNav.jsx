@@ -7,7 +7,7 @@ const MobileNav = ({ onNavigate, activeSection }) => {
     const navItems = [
         { name: 'Work', color: 'bg-brand-teal', id: 'work', num: '01' },
         { name: 'About', color: 'bg-brand-pink', id: 'about', num: '02' },
-        { name: 'Services', color: 'bg-brand-orange', id: 'services', num: '03' },
+        { name: 'Skills', color: 'bg-brand-orange', id: 'skills', num: '03' },
         { name: 'Contact', color: 'bg-brand-yellow', id: 'contact', num: '04' },
     ];
 

@@ -274,11 +274,7 @@ const Footer = () => {
             </div>
 
 
-            {/* ── COPYRIGHT BAR ── */}
-            <div className="section-container py-8 flex flex-col md:flex-row items-center justify-between text-sm font-bold tracking-tight gap-3">
-                <p>© 2026 FEED Agency. All rights reserved.</p>
-                <a href="#" className="hover:underline underline-offset-4">Privacy Policy</a>
-            </div>
+
         </section>
     );
 };
