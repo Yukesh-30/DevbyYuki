@@ -31,11 +31,12 @@ const ProjectCard = ({ project, index }) => {
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
                         {project.tags.map((tag, i) => (
-                            <span key={i} className="px-2 md:px-3 py-0.5 md:py-1 bg-white/10 backdrop-blur-md rounded-full text-[8px] md:text-[10px] text-white/80 font-betania tracking-widest uppercase">
+                            <span key={i} className="px-2 md:px-3 py-0.5 md:py-1 bg-white/10 backdrop-blur-md rounded-full text-[8px] md:text-[10px] text-white/80 font-body tracking-widest uppercase">
                                 {tag}
                             </span>
                         ))}
                     </div>
+
                 </div>
             </div>
 
