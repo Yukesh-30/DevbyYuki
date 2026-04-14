@@ -138,7 +138,7 @@ const SlideItem = ({ slide, onComplete }) => {
   );
 };
 
-const CanvasHero = ({ onNavigate }) => {
+const CanvasHero = ({ onNavigate, onOpenInstaQR }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNextSlide = () => {
@@ -251,7 +251,7 @@ const CanvasHero = ({ onNavigate }) => {
 
       {/* Sweet Candies Section */}
       <SweetCandies />
-      <MinimalFooter />
+      <MinimalFooter onOpenInstaQR={onOpenInstaQR} />
     </div>
   );
 };
