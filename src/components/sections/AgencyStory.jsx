@@ -39,9 +39,9 @@ const InstagramIcon = ({ className }) => (
 import MinimalFooter from '../layout/MinimalFooter';
 import aboutImg from '../../assets/About.jpg';
 
-const AgencyStory = () => {
+const AgencyStory = ({ onOpenInstaQR }) => {
     return (
-        <div className="w-full bg-[#0a0a0a] min-h-screen relative pt-16" id="about">
+        <div className="w-full bg-[#0a0a0a] min-h-screen relative pt-32" id="about">
             {/* Header: Centered Title */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -120,23 +120,33 @@ const AgencyStory = () => {
                     >
                         <span className="text-brand-cream/50 text-sm font-betania uppercase tracking-widest">Connect</span>
                         <div className="flex items-center gap-6">
-                            <a href="https://github.com" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-brand-cream/20 flex items-center justify-center text-brand-cream hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-500 hover:scale-110">
+                            <a href="https://github.com/Yukesh-30" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-brand-cream/20 flex items-center justify-center text-brand-cream hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-500 hover:scale-110">
                                 <GithubIcon className="w-6 h-6" />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-brand-cream/20 flex items-center justify-center text-brand-cream hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-500 hover:scale-110">
+                            <a href="https://www.linkedin.com/in/yukesh-d-293235305" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-brand-cream/20 flex items-center justify-center text-brand-cream hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-500 hover:scale-110">
                                 <LinkedinIcon className="w-6 h-6" />
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-brand-cream/20 flex items-center justify-center text-brand-cream hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-500 hover:scale-110">
+                            <a 
+                                href="https://www.instagram.com/yukesh_30?igsh=MXcyMTJ5cTN4Nmd2Yg==" 
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    onOpenInstaQR();
+                                }}
+                                target="_blank" 
+                                rel="noreferrer" 
+                                className="w-14 h-14 rounded-full border border-brand-cream/20 flex items-center justify-center text-brand-cream hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-500 hover:scale-110"
+                            >
                                 <InstagramIcon className="w-6 h-6" />
                             </a>
                         </div>
+
                     </motion.div>
                 </div>
             </section>
 
             {/* Footer Wrapper - To ensure the dark theme transitions properly to footer if needed */}
             <div className="w-full relative z-10 bg-brand-cream">
-                <MinimalFooter />
+                <MinimalFooter onOpenInstaQR={onOpenInstaQR} />
             </div>
         </div>
     );

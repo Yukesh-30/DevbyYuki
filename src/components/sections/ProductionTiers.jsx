@@ -31,7 +31,7 @@ const MarqueeRow = ({ skills, direction = 'left', speed = 30 }) => {
     );
 };
 
-const ProductionTiers = () => {
+const ProductionTiers = ({ onOpenInstaQR }) => {
     const sectionRef = useRef(null);
     
     const frontendSkills = [
@@ -52,21 +52,20 @@ const ProductionTiers = () => {
         { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
         { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
         { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-        { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
-        { name: "Spring", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
         { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" }
     ];
 
+
     return (
         <div className="w-full bg-[#0a0a0a]">
-            <section className="w-full bg-[#0a0a0a] min-h-screen relative py-24 md:py-32" id="skills" ref={sectionRef}>
+            <section className="w-full bg-[#0a0a0a] min-h-screen relative pt-32 pb-24 md:pt-40 md:pb-32" id="skills" ref={sectionRef}>
                 {/* Topic Header: Skills */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="mb-24 text-center px-6"
+                    className="mb-12 text-center px-6"
                 >
                     <h3 className="text-brand-cream text-6xl md:text-8xl font-playfair italic leading-none">Skills</h3>
                 </motion.div>
@@ -147,7 +146,7 @@ const ProductionTiers = () => {
             
             {/* Footer Wrapper */}
             <div className="w-full relative z-10 bg-brand-cream">
-                <MinimalFooter />
+                <MinimalFooter onOpenInstaQR={onOpenInstaQR} />
             </div>
         </div>
     );
